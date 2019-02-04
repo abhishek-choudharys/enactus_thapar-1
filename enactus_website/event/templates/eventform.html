@@ -1,0 +1,50 @@
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <head>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Events</title>
+<link href="https://fonts.googleapis.com/css?family=Major+Mono+Display" rel="stylesheet">
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{% static 'accounts/fonts/material-icon/css/material-design-iconic-font.min.css' %}">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{% static 'accounts/css/style.css' %}">
+</head>
+<body>
+    <div class="main">
+
+        <section class="signup">
+            <!-- <img src="images/signup-bg.jpg" alt=""> -->
+            <div class="container">
+                <div class="signup-content">
+                    <form method="POST" id="signup-form" class="signup-form" enctype="multipart/form-data">
+                        <h2 class="form-title" style="font-family: 'Major Mono Display';">Register For Event</h2>
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <div class="form-group">
+                            <button type="submit" class="form-submit" value="upload">Register</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    </body>
+{% endblock %}
+
+
+
